@@ -173,7 +173,7 @@ install_llvm_mingw() {
     ok "LLVM-MinGW -> ${target}"
 }
 
-# Separate tree, kept off PATH: it ships its own `clang`, and ReactOS's
+# Separate tree, kept off PATH: it ships its own `clang`, and LiberNT's
 # configure.sh selects it by path for ARCH=riscv64. Host builds are published
 # per platform, so a host without one keeps the rest of the install.
 install_llvm_mingw_riscv() {
@@ -321,7 +321,7 @@ print_summary() {
     printf '\nLLVM toolchain (not on PATH; LiberNT configure.sh uses it for every Clang build):\n'
     printf '  %s/llvm\n' "${INSTALL_ROOT}"
     if [ -x "${INSTALL_ROOT}/llvm-mingw-riscv24/bin/clang" ]; then
-        printf '\nRISC-V toolchain (not on PATH; ReactOS configure.sh uses it for riscv64):\n'
+        printf '\nRISC-V toolchain (not on PATH; LiberNT configure.sh uses it for riscv64):\n'
         printf '  %s/llvm-mingw-riscv24\n' "${INSTALL_ROOT}"
     fi
     if [ "${HOST_OS}" = "macos" ]; then
