@@ -1,6 +1,6 @@
 # LiberNT Build Toolchain
 
-Prebuilt toolchain (RosBE) for building LiberNT on Windows, Linux and macOS,
+Prebuilt toolchain (RosBE) for building [LiberNT](https://github.com/LiberNT/LiberNT) on Windows, Linux and macOS,
 published as GitHub releases, plus the install scripts that fetch them. It has
 no build sources.
 
