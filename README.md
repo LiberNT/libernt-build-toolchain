@@ -1,12 +1,37 @@
 # LiberNT Build Toolchain
 
-Prebuilt Windows toolchain (RosBE) for building LiberNT, published as GitHub
-releases. This repository holds only the binaries and this README; it has no
-build sources.
+Prebuilt toolchain (RosBE) for building LiberNT on Windows, Linux and macOS,
+published as GitHub releases, plus the install scripts that fetch them. It has
+no build sources.
 
 Latest release: [**v20261015**](https://github.com/LiberNT/libernt-build-toolchain/releases/tag/v20261015)
 
-## Downloads
+## Install on Linux or macOS
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/LiberNT/libernt-build-toolchain/main/rosbe-unix-bootstrap.sh | sh
+```
+
+The script detects the host and installs the toolchains under
+`~/.local/opt/rosbe`. It downloads them from the pre-releases here:
+
+| Release | Installed as |
+|---------|--------------|
+| `llvm-mingw-20261007` | `llvm-mingw` |
+| `llvm-mingw-riscv24-20261007` | `llvm-mingw-riscv24` |
+| `llvm-20261015` | `llvm` |
+
+MinGW-GCC comes from
+[ahmedarif193/mingw-gcc16.2](https://github.com/ahmedarif193/mingw-gcc16.2).
+
+Docker variant (Linux, needs `podman` or `docker`):
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/LiberNT/libernt-build-toolchain/main/rosbe-linux-docker-bootstrap.sh | sh
+rosbe enable
+```
+
+## Windows downloads
 
 | File | What it is |
 |------|------------|
